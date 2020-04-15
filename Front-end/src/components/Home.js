@@ -13,7 +13,6 @@ const Home = (props) => {
   }
 
   return (
-
     <div>
       <Link to='/login'>Log In</Link>
       <br></br>
