@@ -2,15 +2,13 @@ class CreateStores < ActiveRecord::Migration[6.0]
   def change
     create_table :stores do |t|
       t.string :name
-      t.string :cart
-      t.string :cart_address
-      t.string :address
-      t.integer :areacode
-      t.integer :user_id
-      t.integer :helper_id
-
-
-
+      t.string :description
+      t.string :address_1
+      t.string :address_2
+      t.string :city
+      t.string :state
+      t.integer :zipcode
+      
       t.timestamps
     end
   end
