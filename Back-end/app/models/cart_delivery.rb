@@ -1,2 +1,0 @@
-class CartDelivery < ApplicationRecord
-end
