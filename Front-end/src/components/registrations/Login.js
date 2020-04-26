@@ -6,7 +6,6 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      username: '',
       email: '',
       password: '',
       errors: ''
@@ -25,10 +24,9 @@ class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const {username, email, password} = this.state
+    const {email, password} = this.state
     
     let user = {
-      username: username,
       email: email,
       password: password
     }
@@ -67,47 +65,49 @@ class Login extends Component {
   }
 
   render() {
-    const {username, email, password} = this.state
+    const {email, password} = this.state
     
     return (
-      <div>
-        <h1>Log In</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            placeholder="username"
-            type="text"
-            name="username"
-            value={username}
-            onChange={this.handleChange}
-          />
-          <input
-            placeholder="email"
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-          <input
-            placeholder="password"
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-          <button placeholder="submit" type="submit">
-            Log In
-          </button>
-          <div>
-            or <Link to='/signup'>sign up</Link>
-          </div>
-          
-          </form>
-          <div>
-          {
-            this.state.errors ? this.handleErrors() : null
-          }
+      <>
+        <div>
+          <h1>Help Us Deliver</h1>
         </div>
-      </div>
+        <div class="jumbotron"> 
+          <h2>Log In</h2>
+          <form onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <input
+                placeholder="email"
+                type="text"
+                name="email"
+                value={email}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                placeholder="password"
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </div>
+            <button class="btn btn-primary" placeholder="submit" type="submit">
+              Log In
+            </button>
+            <div>
+              or <Link to='/signup'>sign up</Link>
+            </div>
+            
+            </form>
+            <div>
+            {
+              this.state.errors ? this.handleErrors() : null
+            }
+          </div>
+        </div>
+      </>
     );
   }
 }
